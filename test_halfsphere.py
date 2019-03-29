@@ -43,12 +43,19 @@ def doit():
 
     ## show the maps
     hp.mollview(m[0])
+    plt.savefig('map_full.png', dpi=300)
     hp.mollview(m_t0[0])
+    plt.savefig('map_t0.png', dpi=300)
     hp.mollview(m_0b[0])
+    plt.savefig('map_0b.png', dpi=300)
     hp.mollview(m_tt[0])
+    plt.savefig('map_tt.png', dpi=300)
     hp.mollview(m_bb[0])
+    plt.savefig('map_bb.png', dpi=300)
     hp.mollview(m_tf[0])
+    plt.savefig('map_tf.png', dpi=300)
     hp.mollview(m_bp[0])
+    plt.savefig('map_bp.png', dpi=300)
 
     cl_full = hp.anafast(m, lmax=lmax)
     cl_t0 = hp.anafast(m_t0, lmax=lmax)
@@ -60,26 +67,52 @@ def doit():
 
     plt.figure()
     plt.loglog(cl2dl(cl_full[:3].T))
+    plt.xlabel('multipole momelt, $l$')
+    plt.ylabel('$D_l (K^2)$')
+    plt.ylim((1e-19, 1e-9))
+    plt.savefig('cl_full.png', dpi=300)
     
     plt.figure()
     plt.loglog(cl2dl(cl_t0[:3].T))
+    plt.xlabel('multipole momelt, $l$')
+    plt.ylabel('$D_l (K^2)$')
+    plt.ylim((1e-19, 1e-9))
+    plt.savefig('cl_t0.png', dpi=300)
     
     plt.figure()
     plt.loglog(cl2dl(cl_0b[:3].T))
+    plt.xlabel('multipole momelt, $l$')
+    plt.ylabel('$D_l (K^2)$')
+    plt.ylim((1e-19, 1e-9))
+    plt.savefig('cl_0b.png', dpi=300)
 
     plt.figure()
     plt.loglog(cl2dl(cl_tt[:3].T))
+    plt.xlabel('multipole momelt, $l$')
+    plt.ylabel('$D_l (K^2)$')
+    plt.ylim((1e-19, 1e-9))
+    plt.savefig('cl_tt.png', dpi=300)
 
     plt.figure()
     plt.loglog(cl2dl(cl_bb[:3].T))
+    plt.xlabel('multipole momelt, $l$')
+    plt.ylabel('$D_l (K^2)$')
+    plt.ylim((1e-19, 1e-9))
+    plt.savefig('cl_bb.png', dpi=300)
 
     plt.figure()
     plt.loglog(cl2dl(cl_tf[:3].T))
+    plt.xlabel('multipole momelt, $l$')
+    plt.ylabel('$D_l (K^2)$')
+    plt.ylim((1e-19, 1e-9))
+    plt.savefig('cl_tf.png', dpi=300)
 
     plt.figure()
     plt.loglog(cl2dl(cl_bp[:3].T))
-
-    plt.show()
+    plt.xlabel('multipole momelt, $l$')
+    plt.ylabel('$D_l (K^2)$')
+    plt.ylim((1e-19, 1e-9) )
+    plt.savefig('cl_bp.png', dpi=300)
 
 if __name__ == '__main__':
     doit()
