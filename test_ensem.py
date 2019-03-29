@@ -42,6 +42,6 @@ def ensemble(seed, nsamples=10):
 
     
 if __name__=="__main__":
-    ensemble(42, nsamples=300)
+    ensemble(42, nsamples=1000)
 
 
